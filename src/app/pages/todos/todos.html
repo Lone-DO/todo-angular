@@ -1,0 +1,12 @@
+<h3>Todo List</h3>
+<form>
+  <label for="searchText">Search Todos</label>
+  <input type="text" id="searchText" name="search" [(ngModel)]="searchText" />
+</form>
+<ul>
+  @for (todo of todoItems() | filterTodos : searchText(); track $index) {
+  <li>
+    <app-todo-item [todo]="todo" />
+  </li>
+  }
+</ul>
