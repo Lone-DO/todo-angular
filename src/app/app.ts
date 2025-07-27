@@ -1,15 +1,19 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AppHeader } from './components/app-header/app-header';
+import { AppFooter } from './components/app-footer/app-footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, AppHeader, AppFooter],
   template: `
-    <h1>Welcome to {{ title() }}!</h1>
-
-    <router-outlet />
+    <app-header />
+    <main>
+      <router-outlet />
+    </main>
+    <app-footer />
   `,
-  styles: [],
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('learn-angular');
