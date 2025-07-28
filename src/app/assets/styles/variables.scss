@@ -1,0 +1,24 @@
+/** Font Sizes */
+$fontSizeHeading: 32px;
+$fontSizeFooter: 16px;
+$fontSizeInput: 20px;
+$fontSizeList: 12px;
+
+/** Colors */
+$colorBg: #202020;
+$colorOutline: #373737;
+$colorText: #bababa;
+$colorTextAlt: rgba(
+  $color: $colorText,
+  $alpha: 0.5,
+);
+$colorDone: #ecbb5b;
+$colorDoneAlt: rgba(
+  $color: $colorDone,
+  $alpha: 0.5,
+);
+$colorRemove: #c64444;
+$colorRemoveAlt: rgba(
+  $color: $colorRemove,
+  $alpha: 0.5,
+);

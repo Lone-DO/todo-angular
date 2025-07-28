@@ -28,7 +28,10 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"]
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/app/assets/styles"]
+            },
+            "styles": ["src/app/assets/styles/index.scss"]
           },
           "configurations": {
             "production": {
