@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { iTodo } from '@/services/todos';
+/** Assets */
+import { iTodo } from '@/assets/services/todos';
 
 @Pipe({
   name: 'filterTodos',

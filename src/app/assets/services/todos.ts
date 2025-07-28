@@ -6,6 +6,7 @@ export interface iTodo {
   id: number;
   userId: number;
   completed: boolean;
+  hidden?: boolean;
 }
 
 @Injectable({
