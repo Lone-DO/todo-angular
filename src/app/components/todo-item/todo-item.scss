@@ -1,0 +1,65 @@
+@use "variables.scss" as *;
+li {
+  display: flex;
+  gap: 1rem;
+  padding: 8px;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  justify-content: space-between;
+  border: 1px solid $colorOutline;
+  &:not([disabled]) input {
+    color: $colorBg;
+    background-color: $colorText;
+  }
+  &[disabled] {
+    &,
+    input {
+      color: $colorText;
+      background-color: $colorBg;
+    }
+  }
+  &[data-completed] {
+    &,
+    input {
+      background-color: $colorOutline;
+      color: $colorTextAlt;
+    }
+    input {
+      text-decoration: line-through;
+    }
+  }
+}
+input {
+  flex: 1;
+  border: none;
+  text-overflow: ellipsis;
+}
+fieldset {
+  gap: 8px;
+  display: flex;
+  margin-left: auto;
+  img:not([disabled]),
+  button:not([disabled]) {
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  img {
+    width: 1rem;
+    filter: invert(1);
+  }
+  button {
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    outline: $colorOutline;
+    // flex: 1;
+    &[data-type="toggle"] {
+      background-color: $colorDone;
+    }
+    &[data-type="delete"] {
+      background-color: $colorRemove;
+    }
+  }
+}

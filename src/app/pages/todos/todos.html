@@ -1,10 +1,24 @@
-<h3>Todo List</h3>
-<form>
-  <label for="searchText">Search Todos</label>
-  <input type="text" id="searchText" name="search" [(ngModel)]="searchText" />
-</form>
-<ul>
-  @for (todo of todoItems() | filterTodos : searchText(); track $index) {
-  <app-todo-item [todo]="todo" (updated)="updateTodoItem($event)" />
+<section>
+  <header>
+    <h1>Daily Todo's</h1>
+    <form>
+      <input
+        type="text"
+        name="search"
+        placeholder="Search Task"
+        [(ngModel)]="searchText"
+      />
+    </form>
+  </header>
+  @if (busy()) {
+  <span>Loading...</span>
+  } @else if (!todoItems().length) {
+  <span>No Todos Found</span>
+  } @else {
+  <ul>
+    @for (todo of todoItems() | filterTodos : searchText(); track $index) {
+    <app-todo-item [todo]="todo" (updated)="updateTodoItem($event)" />
+    }
+  </ul>
   }
-</ul>
+</section>

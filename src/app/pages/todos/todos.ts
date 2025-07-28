@@ -1,9 +1,10 @@
-import { Component, inject, signal } from '@angular/core';
-import { iTodo, TodosService } from '@/services/todos';
 import { catchError } from 'rxjs';
-import { TodoItem } from '@/components/todo-item/todo-item';
 import { FormsModule } from '@angular/forms';
-import { FilterTodosPipe } from '@/pipes/filter-todos-pipe';
+import { Component, inject, signal } from '@angular/core';
+/** Assets */
+import { TodoItem } from '@/components/todo-item/todo-item';
+import { iTodo, TodosService } from '@/assets/services/todos';
+import { FilterTodosPipe } from '@/assets/pipes/filter-todos-pipe';
 
 @Component({
   selector: 'app-todos',
@@ -12,6 +13,7 @@ import { FilterTodosPipe } from '@/pipes/filter-todos-pipe';
   styleUrl: './todos.scss',
 })
 export class Todos {
+  busy = signal(false);
   searchText = signal('');
   todoItems = signal<iTodo[]>([]);
   todoService = inject(TodosService);
@@ -23,16 +25,18 @@ export class Todos {
   }
 
   ngOnInit(): void {
+    this.busy.set(true);
     this.todoService
       .getTodos()
       .pipe(
         catchError((err) => {
           console.log(err);
-          throw err;
+          return [];
         })
       )
       .subscribe((todos) => {
         this.todoItems.set(todos);
-      });
+      })
+      .add(() => this.busy.set(false));
   }
 }

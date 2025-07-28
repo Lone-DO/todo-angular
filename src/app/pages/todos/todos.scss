@@ -1,9 +1,50 @@
+@use "variables.scss" as *;
+
+section {
+  padding: 1rem;
+  color: $colorText;
+  background-color: $colorBg;
+  &::ng-deep {
+    font-family: "Rubik" !important;
+  }
+  header {
+    gap: 1rem;
+    padding: 1rem 0;
+    flex-direction: column;
+    text-align: center;
+    top: 0;
+    left: 0;
+    display: flex;
+    position: sticky;
+    background-color: $colorBg;
+    z-index: 1;
+    h1 {
+      font-size: 32px;
+      font-weight: bold;
+    }
+  }
+}
 form {
-  margin-bottom: 0.5rem;
+  display: flex;
+  input {
+    flex: 1;
+    padding: 1rem;
+    color: $colorText;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 1.25rem;
+    border: 1px solid $colorOutline;
+    background-color: $colorBg;
+    transition: color ease-in-out 200ms, background-color ease-in-out 200ms;
+    &:focus {
+      color: $colorBg;
+      background-color: $colorText;
+    }
+  }
 }
 ul {
-  max-height: 500px;
-  overflow-y: auto;
-  border: 1px grey groove;
-  padding: 0 1rem;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $colorBg;
 }
