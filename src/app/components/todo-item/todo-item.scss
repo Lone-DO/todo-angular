@@ -37,7 +37,9 @@ input {
 fieldset {
   gap: 8px;
   display: flex;
+  min-width: 165px;
   margin-left: auto;
+  justify-content: flex-end;
   img:not([disabled]),
   button:not([disabled]) {
     cursor: pointer;

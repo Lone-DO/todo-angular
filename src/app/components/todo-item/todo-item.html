@@ -12,20 +12,20 @@
   <fieldset>
     <img
       *ngIf="!editing() && !todo().completed"
-      src="/icons/pencil-solid-full.svg"
+      src="icons/pencil-solid-full.svg"
       (click)="toggleEditing()"
       alt="edit"
       title="edit title"
     />
     @if (editing()) {
     <img
-      src="/icons/floppy-disk-solid-full.svg"
+      src="icons/floppy-disk-solid-full.svg"
       (click)="updateTodo('edit')"
       alt="save"
       title="update title"
     />
     <img
-      src="/icons/xmark-solid-full.svg"
+      src="icons/xmark-solid-full.svg"
       (click)="updateTodo('cancel')"
       alt="cancel"
       title="cancel changes"
