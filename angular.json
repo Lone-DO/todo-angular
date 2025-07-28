@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-todo": {
+    "todo-angular": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -19,6 +19,8 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "baseHref": "/todo-angular/",
+            "outputPath": "./dist/todo-angular",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -61,10 +63,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-todo:build:production"
+              "buildTarget": "todo-angular:build:production"
             },
             "development": {
-              "buildTarget": "angular-todo:build:development"
+              "buildTarget": "todo-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,6 +87,9 @@
             ],
             "styles": ["src/styles.scss"]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }

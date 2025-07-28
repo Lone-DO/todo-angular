@@ -42,14 +42,4 @@ jobs:
       - name: Build
         uses: borales/actions-yarn@v4
         with:
-          cmd: build # will run `yarn build:prod` command
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload dist folder
-          path: "./dist/angular-todo/browser"
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          cmd: deploy # will run `yarn build:prod` command
