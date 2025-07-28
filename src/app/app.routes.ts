@@ -6,13 +6,13 @@ export const routes: Routes = [
     pathMatch: 'full',
     loadComponent: () => import('./pages/todos/todos').then((m) => m.Todos),
   },
-  {
-    path: 'about',
-    loadComponent: () => import('./pages/about/about').then((m) => m.About),
-  },
-  {
-    path: 'contact',
-    loadComponent: () =>
-      import('./pages/contact/contact').then((m) => m.Contact),
-  },
+  // {
+  //   path: 'about',
+  //   loadComponent: () => import('./pages/about/about').then((m) => m.About),
+  // },
+  // {
+  //   path: 'contact',
+  //   loadComponent: () =>
+  //     import('./pages/contact/contact').then((m) => m.Contact),
+  // },
 ];
