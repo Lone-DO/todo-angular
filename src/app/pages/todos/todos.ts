@@ -1,9 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
-import { iTodo, TodosService } from '../../services/todos';
+import { iTodo, TodosService } from '@/services/todos';
 import { catchError } from 'rxjs';
-import { TodoItem } from '../../components/todo-item/todo-item';
+import { TodoItem } from '@/components/todo-item/todo-item';
 import { FormsModule } from '@angular/forms';
-import { FilterTodosPipe } from '../../pipes/filter-todos-pipe';
+import { FilterTodosPipe } from '@/pipes/filter-todos-pipe';
 
 @Component({
   selector: 'app-todos',
@@ -12,9 +12,15 @@ import { FilterTodosPipe } from '../../pipes/filter-todos-pipe';
   styleUrl: './todos.scss',
 })
 export class Todos {
-  todoService = inject(TodosService);
-  todoItems = signal<iTodo[]>([]);
   searchText = signal('');
+  todoItems = signal<iTodo[]>([]);
+  todoService = inject(TodosService);
+
+  updateTodoItem(item: iTodo) {
+    this.todoItems.update((todos) => {
+      return todos.map((todo) => (todo.id === item.id ? item : todo));
+    });
+  }
 
   ngOnInit(): void {
     this.todoService

@@ -1,4 +1,9 @@
-<fieldset>
-  <input [id]="todo().id" type="checkbox" [ngModel]="todo().completed" />
+<li>
+  <input
+    [id]="todo().id"
+    type="checkbox"
+    [ngModel]="todo().completed"
+    (input)="updateTodo()"
+  />
   <label [for]="todo().id">{{ todo().title }}</label>
-</fieldset>
+</li>

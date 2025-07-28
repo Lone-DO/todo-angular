@@ -5,8 +5,6 @@
 </form>
 <ul>
   @for (todo of todoItems() | filterTodos : searchText(); track $index) {
-  <li>
-    <app-todo-item [todo]="todo" />
-  </li>
+  <app-todo-item [todo]="todo" (updated)="updateTodoItem($event)" />
   }
 </ul>

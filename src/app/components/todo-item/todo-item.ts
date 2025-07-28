@@ -1,6 +1,6 @@
-import { Component, input } from '@angular/core';
+import { Component, EventEmitter, input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { iTodo } from '../../services/todos';
+import { iTodo } from '@/services/todos';
 
 @Component({
   selector: 'app-todo-item',
@@ -10,4 +10,7 @@ import { iTodo } from '../../services/todos';
 })
 export class TodoItem {
   todo = input.required<iTodo>();
+  @Output() updated = new EventEmitter<iTodo>();
+  updateTodo = () =>
+    this.updated.emit({ ...this.todo(), completed: !this.todo().completed });
 }
