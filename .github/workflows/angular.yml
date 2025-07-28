@@ -35,6 +35,13 @@ jobs:
         with:
           node-version: lts/*
           cache: "yarn"
+      - name: Check Github User
+        run: |
+          git --version
+          git config user.name 'Lone-DO'
+          git config user.email 'citizin@outlook.com'
+          git config user.name
+          git config user.email
       - name: Install dependencies
         uses: borales/actions-yarn@v4
         with:
