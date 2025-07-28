@@ -16,5 +16,5 @@ import { AppFooter } from './components/app-footer/app-footer';
   styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('learn-angular');
+  protected readonly title = signal('angular-todo');
 }

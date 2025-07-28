@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "learn-angular": {
+    "angular-todo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -61,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "learn-angular:build:production"
+              "buildTarget": "angular-todo:build:production"
             },
             "development": {
-              "buildTarget": "learn-angular:build:development"
+              "buildTarget": "angular-todo:build:development"
             }
           },
           "defaultConfiguration": "development"
