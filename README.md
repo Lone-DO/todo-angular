@@ -1,6 +1,8 @@
-# LearnAngular
+# Basic Angular Todo App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+This project architecture was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+
+Purpose of this project is to learn how hooks, services, pipes and other various reactive events work in Angular.
 
 ## Development server
 
@@ -57,3 +59,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+# Resources
+
+- Styling based on [Community Figma](https://www.figma.com/design/1VMMwMsxQ2dj7EQFfAED0c) "Minimal To-do List App"
