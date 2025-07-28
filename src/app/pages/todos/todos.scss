@@ -45,6 +45,11 @@ form {
 ul {
   gap: 0.5rem;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   background-color: $colorBg;
+  & > * {
+    flex: 1;
+    min-width: fit-content;
+    max-width: 400px;
+  }
 }
